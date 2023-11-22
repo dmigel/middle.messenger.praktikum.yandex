@@ -1,0 +1,64 @@
+extends ../../layout/main
+
+block variables
+  - var pageTitle = 'Chat'
+  - var mainClass = 'chat'
+
+block content
+    div.chats-column
+        .chats-column__link-container
+            a.chats-column__link Профиль
+                span.material-symbols-outlined chevron_right
+        .chats-column__search
+            input(type= 'text' placeholder=('Поиск')).chats-column__search-inp
+        ul.chats-list
+            li.chat-item
+                .chat-item__logo-stub
+                    img.chat-item__logo
+                .chat-item__info-block
+                    .chat-item__top-info
+                        .chat-item__name Андрей бармалейбармалеdsdsйбармалей12
+                        .chat-item__time 10:49
+                    .chat-item__bottom-info
+                        .chat-item__message
+                            .chat-item__message-me Вы:
+                            | Ваш текст продолжается здесь бармалейбар малеds dsй бармалей12...
+                        .chat-item__message-count 14
+            li.chat-item.active-chat
+                .chat-item__logo-stub
+                    img.chat-item__logo
+                .chat-item__info-block
+                    .chat-item__top-info
+                        .chat-item__name Андрей бармалейбармалеdsdsйбармалей12
+                        .chat-item__time 10:49
+                    .chat-item__bottom-info
+                        .chat-item__message
+                            .chat-item__message-me Вы:
+                            | Ваш текст продолжается здесь бармалейбар малеds dsй бармалей12...
+                        .chat-item__message-count 14
+
+
+    .chat-content
+        .chat-stub
+            .chat-stub__content
+                .chat-stub__select-chat Выберите чат что бы отправить сообщение или
+                .chat-stub__create-chat
+                    button.button Создайте чат
+        .open-chat
+            .open-chat__header
+                .open-chat__header-left
+                    .open-chat__user
+                        .open-chat__user-logo
+                        p.open-chat__user-name Jamal
+                .open-chat__header-right
+                    button.open-chat__header-actionbtn
+                        span.material-symbols-outlined more_vert
+            .open-chat__field
+                .open-chat__message.open-chat__message_me Мое новое сообщение
+                .open-chat__message.open-chat__message_me Мое новое сообщение
+            .open-chat__footer
+                form.open-chat__send-form
+                    button.open-chat__upload-btn
+                    textarea.open-chat__message-field(placeholder="Сообщение")
+                    button.open-chat__send-messagebtn
+                        span.material-symbols-outlined east

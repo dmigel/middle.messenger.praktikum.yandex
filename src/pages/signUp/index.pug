@@ -1,0 +1,36 @@
+extends ../../layout/main
+
+block variables
+    - var pageTitle = 'Sign Up'
+    - var mainClass = 'authentication'
+
+block content
+    form.authentication-form(action= '')
+        .authentication-form__top
+            h3.authentication-form__title Регистрация
+            .authentication-form__inputs
+                .input
+                    input.input__inp(type= 'text' name= 'email' placeholder= ' ' required)
+                    label.input__label Почта
+                .input
+                    input.input__inp(type= 'text' name= 'login' placeholder= ' ' required)
+                    label.input__label Логин
+                .input
+                    input.input__inp(type= 'text' name= 'firstname' placeholder= ' ' required)
+                    label.input__label Имя
+                .input
+                    input.input__inp(type= 'text' name= 'lastname' placeholder= ' ' required)
+                    label.input__label Фамилия
+                .input
+                    input.input__inp(type= 'tel' name= 'phone' placeholder= ' ' required)
+                    label.input__label Телефон
+                .input
+                    input.input__inp(type= 'password' name= 'password' placeholder= ' ' required)
+                    label.input__label Пароль
+                .input
+                    input.input__inp(type= 'password' name= 'confirm' placeholder= ' ' required)
+                    label.input__label Пароль (еще раз)
+
+        .authentication-form__bottom
+            button.button Зарегистрироваться
+            button.button.button_link Войти
