@@ -15,8 +15,8 @@ export default defineConfig({
         rollupOptions: {
             input: {
                 index: path.resolve(__dirname, 'index.html'),
-                signin: path.resolve(__dirname, 'src/pages/signin/index.html'),
-                signup: path.resolve(__dirname, 'src/pages/signup/index.html'),
+                signin: path.resolve(__dirname, 'src/pages/signIn/index.html'),
+                signup: path.resolve(__dirname, 'src/pages/signUp/index.html'),
                 profile: path.resolve(__dirname, 'src/pages/profile/index.html'),
                 modal: path.resolve(__dirname, 'src/pages/modal/index.html'),
                 chat: path.resolve(__dirname, 'src/pages/chat/index.html'),
