@@ -1,0 +1,66 @@
+@import "/src/variables";
+
+.modal {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0,0,0,0.4);
+  display: grid;
+  place-items: center;
+
+  &__content {
+    width: 600px;
+    box-sizing: border-box;
+    background-color: $color-white;
+    border-radius: 12px;
+    padding: 40px 30px;
+    text-align: center;
+  }
+  &_small {
+    .modal__content {
+      width: 340px;
+    }
+  }
+  &__title {
+    font-size: 15px;
+    margin-bottom: 50px;
+    font-weight: 500;
+
+    &_error {
+      color: $color-red;
+    }
+  }
+
+  &__upload-filename {
+    font-weight: 500;
+    color: $color-gray;
+  }
+
+  &__upload-info {
+    margin-bottom: 50px;
+  }
+  &__upload-link {
+    width: 50%;
+    margin: 0 auto;
+    color: $color-blue;
+    text-decoration: underline;
+    position: relative;
+    cursor: pointer;
+  }
+  &__file-inp {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    cursor: pointer;
+  }
+
+  &__upload-errorText {
+    color: $color-red;
+    margin-top: 10px;
+  }
+}

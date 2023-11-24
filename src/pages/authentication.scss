@@ -1,0 +1,40 @@
+@import '../variables.scss';
+
+.authentication {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+}
+
+.authentication-form {
+  margin: 50px auto;
+  display: grid;
+  grid-template-rows: 1fr;
+  width: 340px;
+  min-height: 450px;
+  border-radius: 12px;
+  background: $color-white;
+  box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.14);
+  padding: 50px 30px 30px 30px;
+  box-sizing: border-box;
+
+  &__title {
+    font-size: 20px;
+    text-align: center;
+    font-weight: 500;
+    margin-bottom: 40px;
+  }
+
+  &__inputs {
+    display: grid;
+    gap: 10px;
+  }
+
+  &__bottom {
+    text-align: center;
+    margin-top: 45px;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+}

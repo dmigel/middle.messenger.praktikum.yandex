@@ -1,16 +1,4 @@
-$color-white-blue: #E4EDFD;
-$color-blue: #3369F3;
-$color-blue-hover: #4878f3;
-$color-blue-focus: #1c58f1;
-$color-white: #ffffff;
-$color-red: #FF2F2F;
-$color-black: #1E1E1E;
-$color-gray: #999999;
-$color-another-gray: #EFEFEF;
-$color-gray-border: #EAEAEA;
-$color-white-gray: #FBFBFB;
-
-
+@import "./variables";
 @import 'reset-css';
 
 html,body {
@@ -19,6 +7,7 @@ html,body {
   box-sizing: border-box;
   color: $color-black;
 }
+
 body {
   font-family: 'Inter', sans-serif;
   font-size: 13px;
@@ -54,343 +43,12 @@ body {
   font-size: 18px;
 }
 
-.authentication {
-  display: grid;
-  place-items: center;
-  min-height: 100vh;
-}
-
-.authentication-form {
-  margin: 50px auto;
-  display: grid;
-  grid-template-rows: 1fr;
-  width: 340px;
-  min-height: 450px;
-  border-radius: 12px;
-  background: $color-white;
-  box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.14);
-  padding: 50px 30px 30px 30px;
-  box-sizing: border-box;
-
-  &__title {
-    font-size: 20px;
-    text-align: center;
-    font-weight: 500;
-    margin-bottom: 40px;
-  }
-
-  &__inputs {
-    display: grid;
-    gap: 10px;
-  }
-
-  &__bottom {
-    text-align: center;
-    margin-top: 45px;
-  }
-}
-
-.input {
-  position: relative;
-
-  &__inp {
-    color: $color-black;
-    height: 35px;
-    width: 100%;
-    border: none;
-    border-bottom: 1px solid $color-blue;
-    font-size: 13px;
-    font-weight: 500;
-    outline: none;
-    box-sizing: border-box;
-
-    &:not(:placeholder-shown) ~ .input__label,
-    &:focus ~ .input__label {
-      top: 0px;
-      left: 0px;
-      font-size: 9px;
-    }
-  }
-
-  &__label {
-    position: absolute;
-    top: 50%;
-    left: 0%;
-    transform: translateY(-50%);
-    color: $color-gray;
-    text-align: center;
-    transition: 0.2s cubic-bezier(.65,.05,.36,1);
-    font-size: 13px;
-    font-weight: 500;
-    pointer-events: none;
-  }
-
-}
-
-.button {
-  width: 100%;
-  height: 37px;
-  box-shadow: none;
-  border-radius: 8px;
-  outline: none;
-  border: none;
-  background-color: $color-blue;
-  color: $color-white;
-  cursor: pointer;
-  transition-duration: .3s;
-  font-size: 13px;
-  font-family: inherit;
-  &:hover {
-    background-color: $color-blue-hover;
-  }
-  &:active {
-    background-color: $color-blue-focus;
-  }
-
-  &_link {
-    width: max-content;
-    background-color: transparent;
-    color: $color-blue;
-    padding: 0;
-
-    &:hover {
-      background-color: transparent;
-      color: $color-blue-hover;
-    }
-    &:focus {
-      background-color: transparent;
-      color: $color-blue-focus;
-    }
-  }
-  &_link-red {
-    color: $color-red;
-    &:hover {
-      color: $color-red;
-    }
-    &:focus {
-      color: $color-red;
-    }
-  }
-}
-
-.profile {
-  display: grid;
-  grid-template-columns: 64px 1fr;
-  grid-template-rows: 100vh;
-  overflow: hidden;
-
-  &__back {
-    display: grid;
-    place-items: center;
-    background-color: $color-white-gray;
-    border-right: 1px solid $color-gray-border;
-  }
-  &__back-icon {
-    display: grid;
-    place-items: center;
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
-    background-color: $color-blue;
-    cursor: pointer;
-    transition-duration: .3s;
-    &:hover {
-      background-color: $color-blue-hover;
-    }
-    &:active {
-      background-color: $color-blue-focus;
-    }
-
-    span {
-      color: white;
-      font-size: 18px;
-    }
-  }
-
-  &__content {
-    display: grid;
-    justify-content: center;
-    padding: 60px 0;
-    overflow: auto;
-  }
-
-  &__upload-btn {
-    width: 130px;
-    height: 130px;
-    border-radius: 50%;
-    background-color: $color-another-gray;
-    display: grid;
-    place-items: center;
-    cursor: pointer;
-    position: relative;
-    margin-bottom: 20px;
-    margin: 0 auto 20px auto;
-
-    &:before {
-      content: "Поменять аватар";
-      color: $color-white;
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      text-align: center;
-      background-color: rgba(0,0,0,0.5);
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
-      opacity: 0;
-      transition-duration: .3s;
-    }
-
-    &:hover:before {
-      opacity: 1;
-    }
-
-    span {
-      color: #CDCDCD;
-      font-size: 40px;
-    }
-  }
-
-  &__name {
-    text-align: center;
-    font-size: 16px;
-    font-weight: bold;
-  }
-  &__form-fields {
-    margin: 60px auto;
-    display: grid;
-    width: 510px;
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
-
-  &__form-item {
-    position: relative;
-    width: 100%;
-    display: grid;
-    justify-content: space-between;
-    grid-template-columns: 1fr;
-    align-items: center;
-    border-bottom: 1px solid $color-gray-border;
-
-    &:last-child {
-      border: none;
-    }
-  }
-
-  &__form-label {
-    position: absolute;
-    font-size: 13px;
-    font-weight: 500;
-  }
-  &__form-input {
-    padding-left: 100px;
-    text-align: right;
-    color: $color-gray;
-    height: 32px;
-    border: none;
-    outline: none;
-    font-size: 13px;
-    transition-duration: .3s;
-    border-bottom: 1px solid transparent;
-
-    &:disabled {
-      background-color: transparent;
-    }
-    &:focus {
-      border-bottom: 1px solid $color-blue;
-    }
-  }
-  &__form-btn {
-    width: 280px;
-    margin: 0 auto;
-  }
-
-}
-
-.modal {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: rgba(0,0,0,0.4);
-  transition-duration: .3s;
-  display: grid;
-  place-items: center;
-  opacity: 0;
-  pointer-events: none;
-
-
-  &__content {
-    width: 600px;
-    box-sizing: border-box;
-    background-color: $color-white;
-    border-radius: 12px;
-    padding: 40px 30px;
-    text-align: center;
-  }
-  &_small {
-    .modal__content {
-      width: 340px;
-    }
-  }
-  &__title {
-    font-size: 15px;
-    margin-bottom: 50px;
-    font-weight: 500;
-
-    &_error {
-      color: $color-red;
-    }
-  }
-
-  &__upload-filename {
-    font-weight: 500;
-    color: $color-gray;
-  }
-
-  &__upload-info {
-    margin-bottom: 50px;
-  }
-  &__upload-link {
-    width: 50%;
-    margin: 0 auto;
-  }
-}
-
 .link {
   color: $color-blue;
-  text-decoration: underline;
+  text-decoration: none;
   cursor: pointer;
   display: block;
 }
-.button_link-last {
-  margin-bottom: -12px;
-}
-
-.error-page {
-  display: grid;
-  height: 100vh;
-  place-items: center;
-
-  &__container {
-    text-align: center;
-  }
-  &__number {
-    font-size: 40px;
-    margin-bottom: 20px;
-  }
-  &__text {
-    font-size: 20px;
-    margin-bottom: 60px;
-  }
-}
-
 
 .chat {
   height: 100vh;
@@ -420,6 +78,7 @@ body {
     color: $color-gray;
     font-size: 12px;
     cursor: pointer;
+    text-decoration: none;
   }
 
   &__search {
@@ -638,12 +297,13 @@ body {
 
   &__message {
     padding: 10px;
-    //width: max-content;
+    width: max-content;
     max-width: 400px;
+    border-radius: 10px 10px 0 10px;
   }
   &__message_me {
     background-color: $color-white-blue;
-
+    align-self: flex-end;
   }
 
 

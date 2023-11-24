@@ -1,21 +1,21 @@
 extends ../../layout/main
 
+block styles
+    link(rel='stylesheet', href='../authentication.scss')
+
 block variables
     - var pageTitle = 'Sign In'
     - var mainClass = 'authentication'
 
 block content
-    form.authentication-form(action= '')
+    include ../../components/input/index
+    include ../../components/button/index
+    form.authentication-form(action= '#' method="")
         div.authentication-form__top
             h3.authentication-form__title Вход
             div.authentication-form__inputs
-                div.input
-                    input.input__inp(type= 'text' name= 'login' placeholder= ' ' required)
-                    label.input__label Логин
-                div.input
-                    input.input__inp(type= 'password' name= 'password' placeholder= ' ' required)
-                    label.input__label Пароль
-
+                +customInput('text', 'login', ' ', 'Логин')
+                +customInput('password', 'password', ' ', 'Пароль')
         div.authentication-form__bottom
-            button.button Авторизоваться
-            button.button.button_link Нет аккаунта?
+            +linkButton('Войти', 'submit', '')
+            a.link(href= '/src/pages/signUp/') Зарегистрироваться

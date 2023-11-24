@@ -1,0 +1,20 @@
+extends ../../layout/main
+
+block styles
+    link(rel='stylesheet', href='styles.scss')
+
+block variables
+  - var pageTitle = 'Modal'
+  - var mainClass = 'modal'
+
+block content
+    include ../../components/button/index
+    div.modal.modal_small
+        form.modal__content(action= '#' method="")
+            h3.modal__title.modal__title_error Загрузить файл
+            div.modal__upload-info
+                p.modal__upload-filename pic.jpg
+                div.modal__upload-link Выбрать файл на компьютере
+                    input.modal__file-inp.link(type= 'file' name= "avatar" value='Выбрать файл на компьютере')
+            +linkButton('Поменять', 'submit', '')
+            p.modal__upload-errorText Нужно выбрать файл

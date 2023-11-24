@@ -1,55 +1,42 @@
 extends ../../layout/main
 
+block styles
+    link(rel='stylesheet', href='styles.scss')
+
 block variables
   - var pageTitle = 'Profile'
   - var mainClass = 'profile'
 
 block content
+    include ../../components/button/index
+    include ../../components/profileInput/index
     div.profile__back
         span.profile__back-icon
-            span.material-symbols-outlined arrow_back
+            a.material-symbols-outlined(href= '/') arrow_back
     div.profile__content
         form.profile__form
             div.profile__upload-btn
                 span.material-symbols-outlined photo_library
             p.profile__name Мигель
             div.profile__form-fields
-                div.profile__form-item
-                    label.profile__form-label Почта
-                    input.profile__form-input(type= 'text' name= 'email' placeholder= ' ' value= 'dmigel@yandex.ru' disabled)
-                div.profile__form-item
-                    label.profile__form-label Логин
-                    input.profile__form-input(type= 'text' name= 'login' placeholder= ' ' value= 'dmigel' disabled)
-                div.profile__form-item
-                    label.profile__form-label Имя
-                    input.profile__form-input(type= 'text' name= 'firstname' placeholder= ' ' value= 'Мигель' disabled)
-                div.profile__form-item
-                    label.profile__form-label Фамилия
-                    input.profile__form-input(type= 'text' name= 'lastname' placeholder= ' ')
-                div.profile__form-item
-                    label.profile__form-label Имя в чате
-                    input.profile__form-input(type= 'text' name= 'chatname' placeholder= ' ')
-                div.profile__form-item
-                    label.profile__form-label Телефон
-                    input.profile__form-input(type= 'tel' name= 'phone' placeholder= ' ')
+                +profileInput('Почта', 'text', 'email   ', 'dmigel', true)
+                +profileInput('Логин', 'text', 'login', 'dmigel', true)
+                +profileInput('Имя', 'text', 'first_name', 'Мигель', true)
+                +profileInput('Фамилия', 'text', 'second_name', false, false)
+                +profileInput('Имя в чате', 'text', 'display_name', false, false)
+                +profileInput('Телефон', 'text', 'phone', false, false)
+                +profileInput('Старый пароль', 'password', 'oldPassword', false, false)
+                +profileInput('Новый пароль', 'password', 'newPassword', false, false)
+                +profileInput('Повторить новый пароль', 'password', 'repeatNewPassword', false, false)
             div.profile__form-btn
-                button.button Сохранить
+                +linkButton('Сохранить', 'submit', '')
             div.profile__form-fields
                 div.profile__form-item
-                    button.button.button_link Изменить данные
+                    +linkButton('Изменить данные', '', 'button_link')
                 div.profile__form-item
-                    button.button.button_link Изменить пароль
+                    +linkButton('Изменить пароль', '', 'button_link')
                 div.profile__form-item
-                    button.button.button_link.button_link-red Выйти
-    div.modal.modal_small
-        div.modal__content
-            h3.modal__title.modal__title_error Загрузить файл
-            div.modal__upload-info
-                p.modal__upload-filename pic.jpg
-                div.modal__upload-link
-                    a.link Выбрать файл на компьютере
-            button.button Поменять
-            button.button.button_link.button_link-red.button_link-last Нужно выбрать файл
+                    +linkButton('Войти', '', 'button_link button_link-red')
 
 
 

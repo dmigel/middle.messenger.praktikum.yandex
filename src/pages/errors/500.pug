@@ -3,10 +3,10 @@ block styles
     link(rel='stylesheet', href='styles.scss')
 
 block variables
-  - var pageTitle = 'Not Found'
+  - var pageTitle = 'Bad request'
   - var mainClass = 'error-page'
 
 block content
     include ../../components/errorPages/index
-    +errorPage('404', 'Не туда попали', 'Назад к чатам')
+    +errorPage('500', 'Мы уже фиксим', 'Назад к чатам')
 
