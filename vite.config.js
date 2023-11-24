@@ -28,4 +28,3 @@ export default defineConfig({
 });
 
 
-// script(type="module" src=import.meta.env.BASE_URL + "src/app.js")
