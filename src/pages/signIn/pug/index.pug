@@ -1,15 +1,13 @@
-extends ../../layout/main
+extends ../../../layout/main
 
-block styles
-    link(rel='stylesheet', href='../authentication.scss')
 
 block variables
     - var pageTitle = 'Sign In'
     - var mainClass = 'authentication'
 
 block content
-    include ../../components/input/index
-    include ../../components/button/index
+    include ../../../components/input/index
+    include ../../../components/button/index
     form.authentication-form(action= '#' method="")
         div.authentication-form__top
             h3.authentication-form__title Вход

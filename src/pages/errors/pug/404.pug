@@ -1,12 +1,10 @@
-extends ../../layout/main
-block styles
-    link(rel='stylesheet', href='styles.scss')
+extends ../../../layout/main
 
 block variables
   - var pageTitle = 'Not Found'
   - var mainClass = 'error-page'
 
 block content
-    include ../../components/errorPages/index
+    include ../../../components/errorPages/index
     +errorPage('404', 'Не туда попали', 'Назад к чатам')
 

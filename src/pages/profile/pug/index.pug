@@ -1,15 +1,12 @@
-extends ../../layout/main
-
-block styles
-    link(rel='stylesheet', href='styles.scss')
+extends ../../../layout/main
 
 block variables
   - var pageTitle = 'Profile'
   - var mainClass = 'profile'
 
 block content
-    include ../../components/button/index
-    include ../../components/profileInput/index
+    include ../../../components/button/index
+    include ../../../components/profileInput/index
     div.profile__back
         span.profile__back-icon
             a.material-symbols-outlined(href= '/') arrow_back

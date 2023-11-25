@@ -1,12 +1,10 @@
-extends ../../layout/main
-block styles
-    link(rel='stylesheet', href='styles.scss')
+extends ../../../layout/main
 
 block variables
   - var pageTitle = 'Bad request'
   - var mainClass = 'error-page'
 
 block content
-    include ../../components/errorPages/index
+    include ../../../components/errorPages/index
     +errorPage('500', 'Мы уже фиксим', 'Назад к чатам')
 

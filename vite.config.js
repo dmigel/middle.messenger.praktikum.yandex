@@ -3,7 +3,9 @@ import VitePugPlugin from 'vite-plugin-pug';
 import path from 'path';
 
 export default defineConfig({
-    plugins: [VitePugPlugin()],
+    plugins: [VitePugPlugin({
+      basedir: __dirname,
+    })],
     base: './',
     server: {
         port: 3000,
@@ -15,8 +17,8 @@ export default defineConfig({
         rollupOptions: {
             input: {
                 index: path.resolve(__dirname, 'index.html'),
-                signin: path.resolve(__dirname, 'src/pages/signIn/index.html'),
-                signup: path.resolve(__dirname, 'src/pages/signUp/index.html'),
+                signIn: path.resolve(__dirname, 'src/pages/signIn/index.html'),
+                signUp: path.resolve(__dirname, 'src/pages/signUp/index.html'),
                 profile: path.resolve(__dirname, 'src/pages/profile/index.html'),
                 modal: path.resolve(__dirname, 'src/pages/modal/index.html'),
                 chat: path.resolve(__dirname, 'src/pages/chat/index.html'),
