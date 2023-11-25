@@ -7,6 +7,13 @@
 - `npm run dev` — Запуск версии для разработчика,
 
 
-## Ссылки на страницы проекта
+## Ссылки на верстку проекта
 
-- «[Реакт](https://github.com/facebook/react)»,
+- «[Главная](https://dmigel.netlify.app/)»,
+- «[Войти](https://dmigel.netlify.app/src/pages/signin/)»,
+- «[Зарегистрироваться](https://dmigel.netlify.app/src/pages/signup/)»,
+- «[Профиль](https://dmigel.netlify.app/src/pages/profile/)»,
+- «[Модалка](https://dmigel.netlify.app/src/pages/modal/)»,
+- «[404 ошибка](https://dmigel.netlify.app/src/pages/errors/404)»,
+- «[500 ошибка](https://dmigel.netlify.app/src/pages/errors/500)»,
+- «[Чат](https://dmigel.netlify.app/src/pages/chat/)»,
