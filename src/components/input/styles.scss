@@ -1,0 +1,54 @@
+@import "/src/variables";
+
+.input {
+  position: relative;
+
+  &__inp {
+    color: $color-black;
+    height: 35px;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid $color-blue;
+    font-size: 13px;
+    font-weight: 500;
+    outline: none;
+    box-sizing: border-box;
+
+
+    &:not(:placeholder-shown) ~ .input__label,
+    &:focus ~ .input__label {
+      top: 0px;
+      left: 0px;
+      font-size: 9px;
+    }
+  }
+
+  &_error {
+    height: 45px;
+
+    .input__inp {
+      height: 40px;
+    }
+  }
+
+  &__label {
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    transform: translateY(-50%);
+    color: $color-gray;
+    text-align: center;
+    transition: 0.2s cubic-bezier(.65,.05,.36,1);
+    font-size: 13px;
+    font-weight: 500;
+    pointer-events: none;
+  }
+
+  &__error-text {
+    color: $color-red;
+    margin-top: 5px;
+    position: absolute;
+    font-size: 9px;
+  }
+
+}

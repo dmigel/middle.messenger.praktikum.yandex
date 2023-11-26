@@ -1,0 +1,47 @@
+extends ../../../layout/main
+
+block variables
+  - var pageTitle = 'Profile'
+  - var mainClass = 'profile'
+
+block content
+    include ../../../components/button/index
+    include ../../../components/profileInput/index
+    div.profile__back
+        span.profile__back-icon
+            a.material-symbols-outlined(href= '/') arrow_back
+    div.profile__content
+        form.profile__form
+            div.profile__upload-btn
+                span.material-symbols-outlined photo_library
+            p.profile__name Мигель
+            div.profile__form-fields
+                +profileInput('Почта', 'text', 'email   ', 'dmigel', true)
+                +profileInput('Логин', 'text', 'login', 'dmigel', true)
+                +profileInput('Имя', 'text', 'first_name', 'Мигель', true)
+                +profileInput('Фамилия', 'text', 'second_name', false, false)
+                +profileInput('Имя в чате', 'text', 'display_name', false, false)
+                +profileInput('Телефон', 'text', 'phone', false, false)
+                +profileInput('Старый пароль', 'password', 'oldPassword', false, false)
+                +profileInput('Новый пароль', 'password', 'newPassword', false, false)
+                +profileInput('Повторить новый пароль', 'password', 'repeatNewPassword', false, false)
+            div.profile__form-btn
+                +linkButton('Сохранить', 'submit', '')
+            div.profile__form-fields
+                div.profile__form-item
+                    +linkButton('Изменить данные', '', 'button_link')
+                div.profile__form-item
+                    +linkButton('Изменить пароль', '', 'button_link')
+                div.profile__form-item
+                    +linkButton('Выйти', '', 'button_link button_link-red')
+
+
+
+
+
+
+
+
+
+
+
