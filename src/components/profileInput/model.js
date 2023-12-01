@@ -1,4 +1,4 @@
-class profileInputModel {
+class ProfileInputModel {
   constructor(placeholder, type, name, value, isActive) {
     this.placeholder = placeholder
     this.formType = type
@@ -7,3 +7,5 @@ class profileInputModel {
     this.status = isActive
   }
 }
+
+const profileInputModel = new ProfileInputModel()
