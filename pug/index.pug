@@ -1,0 +1,23 @@
+extends ../src/layout/main
+
+block variables
+  - var pageTitle = 'Navigation'
+  - var mainClass = 'navigation'
+
+block content
+    ul
+        li
+            a(href=('src/pages/signIn/index.html') target=('_blank')) Авторизация
+        li
+            a(href=('src/pages/signUp/index.html') target=('_blank')) Регистрация
+        li
+            a(href=('src/pages/profile/index.html') target=('_blank')) Профиль
+        li
+            a(href=('src/pages/modal/index.html') target=('_blank')) Модалка
+        li
+            a(href=('src/pages/errors/404.html') target=('_blank')) 404 ошибка
+        li
+            a(href=('src/pages/errors/500.html') target=('_blank')) 500 ошибка
+        li
+            a(href=('src/pages/chat/index.html') target=('_blank')) Чат
+block script
